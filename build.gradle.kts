@@ -21,20 +21,41 @@ subprojects {
     apply<JavaPlugin>()
     apply(plugin = "io.izzel.taboolib")
     apply(plugin = "org.jetbrains.kotlin.jvm")
-
     taboolib {
+        description {
+            contributors {
+                name("坏黑")
+                // ...
+            }
+            dependencies {
+                name("Adyeshach")
+            }
+        }
         env {
-            install(
-                UNIVERSAL, DATABASE, KETHER, METRICS, NMS, NMS_UTIL, UI,
-                EXPANSION_REDIS, EXPANSION_JAVASCRIPT, EXPANSION_PLAYER_DATABASE,
-                BUKKIT_ALL
-            )
+            // ...
+            install(NMS_UTIL, UI, UNIVERSAL, DATABASE, KETHER, METRICS, NMS)
+            install(EXPANSION_COMMAND_HELPER, EXPANSION_JAVASCRIPT, EXPANSION_REDIS, EXPANSION_PLAYER_DATABASE)
+            install(BUKKIT_ALL)
         }
         version {
-            taboolib = "6.1.1-beta24"
-            coroutines = null
+            taboolib = "6.1.1-beta25"
         }
+            relocate("ink.ptms.um", "ink.ptms.chemdah.um")
     }
+
+    // taboolib {
+    //     env {
+    //         install(
+    //             UNIVERSAL, DATABASE, KETHER, METRICS, NMS, NMS_UTIL, UI,
+    //             , , ,
+    //             BUKKIT_ALL
+    //         )
+    //     }
+    //     version {
+    //         taboolib = "6.1.1-beta25"
+    //         coroutines = null
+    //     }
+    // }
 
     repositories {
         mavenCentral()
