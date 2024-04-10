@@ -27,9 +27,6 @@ subprojects {
                 name("坏黑")
                 // ...
             }
-            dependencies {
-                name("Adyeshach")
-            }
         }
         env {
             // ...
